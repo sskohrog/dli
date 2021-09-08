@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { GlobalContext, GlobalProvider } from './services/GlobalContext';
+import Routes from './global/Routes';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <GlobalContext.Consumer>
+        {() => (
+          <div className='danyali-container container-fluid'>
+            <div className='main-title-container'>
+              <h1 className='h1-title'>DANYA LI</h1>
+            </div>
+            <div className='main-container'>
+              <Routes />
+            </div>
+            <div className='main-side-container'>
+              <h1 className='h1-title'>INFO</h1>
+              <h1 className='h1-title'>INDEX</h1>
+            </div>
+          </div>
+        )}
+      </GlobalContext.Consumer>
+    </GlobalProvider>
   );
 }
 
