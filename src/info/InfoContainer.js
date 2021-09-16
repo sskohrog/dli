@@ -74,7 +74,7 @@ function InfoContainer() {
                 className='btn btn-link menu-btn'
                 target='_blank'
                 rel='noreferrer'
-                href='google.com'
+                href='https://wwww.google.com'
               >
                 <b>VISIT PHOTOGRAPHY PAGE</b>
               </a>

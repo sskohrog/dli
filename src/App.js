@@ -11,7 +11,9 @@ function App() {
           <div className='danyali-container container-fluid'>
             <div className='main-container'>
               <div className='main-title-container'>
-                <h1 className='h1-title'>DANYA LI</h1>
+                <Link className='h1-title' to='/'>
+                  DANYA LI
+                </Link>
               </div>
               <div className='main-router-container'>
                 <Routes />
