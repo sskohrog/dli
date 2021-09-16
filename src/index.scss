@@ -7,12 +7,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: url('./assets/Yellow_Dot.svg'), default;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a,
+body,
+.btn.btn-link {
+  cursor: url('./assets/Yellow_Dot.svg'), default !important;
 }
 
 .grey-font {

@@ -28,102 +28,118 @@ function InfoContainer() {
   };
 
   return (
-    <div className='info-container'>
-      <div className='row'>
-        <div
-          className='col-6 about-container'
-          dangerouslySetInnerHTML={{ __html: aboutData.description }}
-        ></div>
-      </div>
-      <div className='bottom-container'>
-        <div className='content-container'>
-          <img
-            className='danya-img mb-3'
-            src={((aboutData || {}).contact || {}).img}
-            alt="Danya's Avatar"
-          />
-          <b>CONTACT</b>
-          <a href={`mailto:${((aboutData || {}).contact || {}).email}`}>
-            {((aboutData || {}).contact || {}).email}
-          </a>
-          <a
-            target='_blank'
-            rel='noreferrer'
-            href={`${((aboutData || {}).contact || {}).instagram}`}
-          >
-            {((aboutData || {}).contact || {}).instagram}
-          </a>
-          <a
-            target='_blank'
-            rel='noreferrer'
-            href={`${((aboutData || {}).contact || {}).linkedin}`}
-          >
-            {((aboutData || {}).contact || {}).linkedin}
-          </a>
-        </div>
-        <div className='nav-panel-container'>
-          <a
-            className='btn btn-link menu-btn'
-            target='_blank'
-            rel='noreferrer'
-            href='google.com'
-          >
-            <b>VISIT PHOTOGRAPHY PAGE</b>
-          </a>
-          <button
-            className='btn btn-link menu-btn'
-            onClick={() => setState({ panelData: RESUME, isPanelOpen: true })}
-          >
-            <b>RESUME</b>
-          </button>
-          <button
-            className='btn btn-link menu-btn'
-            onClick={() =>
-              setState({ panelData: PUBLICATIONS, isPanelOpen: true })
-            }
-          >
-            <b>PUBLICATIONS</b>
-          </button>
-          <button
-            className='btn btn-link menu-btn'
-            onClick={() => setState({ panelData: PRESS, isPanelOpen: true })}
-          >
-            <b>PRESS</b>
-          </button>
-        </div>
-      </div>
+    aboutData && (
+      <div className='info-container'>
+        {(aboutData || {}).description && (
+          <div className='row'>
+            <div
+              className='col-6 about-container'
+              dangerouslySetInnerHTML={{
+                __html: (aboutData || {}).description
+              }}
+            ></div>
+          </div>
+        )}
+        {(aboutData || {}).contact && (
+          <div className='bottom-container'>
+            <div className='content-container'>
+              <img
+                className='danya-img mb-3'
+                src={((aboutData || {}).contact || {}).img}
+                alt="Danya's Avatar"
+              />
+              <b>CONTACT</b>
+              <a href={`mailto:${((aboutData || {}).contact || {}).email}`}>
+                {((aboutData || {}).contact || {}).email}
+              </a>
+              <a
+                target='_blank'
+                rel='noreferrer'
+                href={`https://www.instagram.com/${
+                  ((aboutData || {}).contact || {}).instagram
+                }`}
+              >
+                @{((aboutData || {}).contact || {}).instagram}
+              </a>
+              <a
+                target='_blank'
+                rel='noreferrer'
+                href={`${((aboutData || {}).contact || {}).linkedin}`}
+              >
+                LinkedIn
+              </a>
+            </div>
+            <div className='nav-panel-container'>
+              <a
+                className='btn btn-link menu-btn'
+                target='_blank'
+                rel='noreferrer'
+                href='google.com'
+              >
+                <b>VISIT PHOTOGRAPHY PAGE</b>
+              </a>
+              <button
+                className='btn btn-link menu-btn'
+                onClick={() =>
+                  setState({ panelData: RESUME, isPanelOpen: true })
+                }
+              >
+                <b>RESUME</b>
+              </button>
+              <button
+                className='btn btn-link menu-btn'
+                onClick={() =>
+                  setState({ panelData: PUBLICATIONS, isPanelOpen: true })
+                }
+              >
+                <b>PUBLICATIONS</b>
+              </button>
+              <button
+                className='btn btn-link menu-btn'
+                onClick={() =>
+                  setState({ panelData: PRESS, isPanelOpen: true })
+                }
+              >
+                <b>PRESS</b>
+              </button>
+            </div>
+          </div>
+        )}
 
-      <SlidingPane
-        closeIcon={
-          <svg
-            width='22'
-            height='22'
-            viewBox='0 0 22 22'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              d='M1.4429 19.7286L19.5 1.67148'
-              stroke='black'
-              stroke-width='4'
-            />
-            <line
-              x1='2.55704'
-              y1='1.72864'
-              x2='20.557'
-              y2='19.7286'
-              stroke='black'
-              stroke-width='4'
-            />
-          </svg>
-        }
-        isOpen={state.isPanelOpen}
-        from='right'
-        onRequestClose={() => setState({ panelData: null, isPanelOpen: false })}
-      >
-        {renderContent()}
-      </SlidingPane>
-    </div>
+        <SlidingPane
+          closeIcon={
+            <svg
+              width='22'
+              height='22'
+              viewBox='0 0 22 22'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path
+                d='M1.4429 19.7286L19.5 1.67148'
+                stroke='black'
+                stroke-width='4'
+              />
+              <line
+                x1='2.55704'
+                y1='1.72864'
+                x2='20.557'
+                y2='19.7286'
+                stroke='black'
+                stroke-width='4'
+              />
+            </svg>
+          }
+          isOpen={state.isPanelOpen}
+          from='right'
+          onRequestClose={() =>
+            setState({ panelData: null, isPanelOpen: false })
+          }
+        >
+          {renderContent()}
+        </SlidingPane>
+      </div>
+    )
   );
 }
 
