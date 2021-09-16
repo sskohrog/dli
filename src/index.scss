@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: url('./assets/Yellow_Dot.svg'), default;
 }
 
 code {
@@ -21,4 +22,65 @@ code {
 .h1-title {
   font-size: 36px;
   line-height: 41px;
+  font-weight: 500;
+}
+
+.btn.btn-link {
+  color: initial;
+  text-decoration: none;
+  &:active,
+  &:focus {
+    outline: none !important;
+    box-shadow: none;
+  }
+}
+
+.ReactModalPortal {
+  .slide-pane {
+    width: 100vw !important;
+    background: rgba(255, 234, 41, 0.8);
+    cursor: url('./assets/White_Dot.svg'), default !important;
+  }
+  .slide-pane__header {
+    background: rgba(0, 0, 0, 0);
+    display: block;
+    height: auto;
+    border: none;
+    .slide-pane__close {
+      padding: 21px;
+      svg {
+        width: initial;
+      }
+    }
+  }
+  .slide-pane__content {
+    padding: 24px 41px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .ReactModalPortal {
+    .slide-pane {
+      width: 50vw !important;
+    }
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .ReactModalPortal {
+    .slide-pane {
+      width: 35vw !important;
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .ReactModalPortal {
+    .slide-pane {
+      max-width: 450px;
+    }
+  }
 }

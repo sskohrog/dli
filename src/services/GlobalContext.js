@@ -25,6 +25,8 @@ function GlobalProvider({ location, children }) {
     (async () => {
       if (db) {
         await getLandingData();
+        await getInfo();
+        await getIndexData();
       }
     })();
   }, [db]);

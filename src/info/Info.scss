@@ -1,0 +1,46 @@
+.info-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  .bottom-container {
+    display: flex;
+    justify-content: space-between;
+    .content-container {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      font-size: 14px;
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      .danya-img {
+        max-width: 148px;
+      }
+    }
+    .nav-panel-container {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      .menu-btn {
+        text-align: left;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.panel-content-container {
+  display: flex;
+  flex-flow: column;
+  .panel-links {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

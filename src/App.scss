@@ -1,45 +1,41 @@
 .danyali-container {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(9, auto);
-  row-gap: 0;
-  column-gap: 0;
+  display: flex;
   .main {
     &-title-container {
-      grid-column-start: 1;
-      grid-column-end: 7;
       h1 {
         padding-left: 5rem;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        letter-spacing: 0.2em;
+        font-weight: bold;
       }
     }
     &-container {
-      height: 500px;
-      border: 1px solid black;
-
+      width: 100%;
+    }
+    &-router-container {
+      height: calc(100vh - 120px);
       margin-left: 5rem;
-      grid-column-start: 1;
-      grid-column-end: 7;
-      grid-row-start: 2;
-      grid-row-end: 9;
+      > .row {
+        height: 100%;
+      }
     }
     &-side-container {
-      grid-column-start: 7;
-      grid-column-end: 8;
-      grid-row-start: 1;
-      grid-row-end: 3;
-      max-height: 1000px;
+      width: 60px;
+      max-height: calc(100vh - 75px);
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       align-items: flex-end;
       justify-content: space-between;
+      margin-left: 20px;
       padding-top: 24px;
-      h1 {
+      .h1-title {
+        font-weight: bold;
         transform: rotate(90deg);
-        transform-origin: 0 0;
-        height: 150px;
-        width: 20px;
+        transform-origin: top;
+        width: 0;
         margin-top: 0px;
       }
     }
