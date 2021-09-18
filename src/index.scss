@@ -20,7 +20,7 @@ body,
   cursor: url('./assets/Yellow_Dot.svg'), default !important;
 }
 
-.grey-font {
+.gray-font {
   color: $light-grey;
 }
 
@@ -53,6 +53,7 @@ body,
     border: none;
     .slide-pane__close {
       padding: 21px;
+      margin-left: 0;
       svg {
         width: initial;
       }

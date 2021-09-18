@@ -1,0 +1,24 @@
+.index-container {
+  // to center index content
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  .filter-container {
+    display: flex;
+    > div:first-child {
+      max-width: 150px;
+    }
+    .filter-btn {
+      padding-left: 0;
+    }
+    .btn.btn-link:hover {
+      text-decoration: underline;
+    }
+  }
+  .project-list-container {
+    margin-top: 3%;
+    .index-item {
+      text-transform: uppercase;
+    }
+  }
+}

@@ -84,7 +84,7 @@ function GlobalProvider({ location, children }) {
     const indexCollection = collection(db, INDEX_COLLECTION);
     const indexSnap = await getDocs(indexCollection);
     indexSnap.forEach((doc) => {
-      landingData[doc.id] = doc.data();
+      indexData[doc.id] = doc.data();
     });
     setIndexData(indexData);
   };
