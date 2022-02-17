@@ -1,2 +1,8 @@
+@font-face {
+  font-family: 'ABCMonumentGrotesk-Heavy-Trial';
+  src: url('./assets/ABCMonumentGrotesk-Heavy-Trial.otf') format('opentype');
+}
 
-$light-grey: #7D7D7D;
+$AG-trial-heavy: ABCMonumentGrotesk-Heavy-Trial;
+
+$light-grey: #7d7d7d;

@@ -1,7 +1,7 @@
 import { navigate } from '@reach/router';
 import React, { useContext, useState } from 'react';
 import { GlobalContext } from '../services/GlobalContext';
-import './index-container.scss';
+import './IndexContainer.scss';
 
 function IndexContainer() {
   const { indexData } = useContext(GlobalContext);
@@ -52,7 +52,7 @@ function IndexContainer() {
                     : 'visible'
               }}
               className='index-item'
-              onClick={() => navigate(indexData[key].path)}
+              onClick={() => navigate(`work/${indexData[key].path}`)}
               dangerouslySetInnerHTML={{
                 __html: indexData[key].title
               }}

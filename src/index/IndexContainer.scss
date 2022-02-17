@@ -19,6 +19,9 @@
     margin-top: 3%;
     .index-item {
       text-transform: uppercase;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

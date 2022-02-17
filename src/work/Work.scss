@@ -1,0 +1,64 @@
+.work-container {
+  .carousel-container {
+    width: 100%;
+    .carousel-wrapper {
+      > div {
+        text-align: center;
+        .carousel-img {
+          max-height: 225px;
+        }
+      }
+    }
+    .right-btn,
+    .left-btn {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .work-container {
+    .carousel-container {
+      .right-btn,
+      .left-btn {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .work-container {
+    .carousel-container {
+      .carousel-wrapper {
+        > div {
+          .carousel-img {
+            max-height: 275px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .work-container {
+    .carousel-container {
+      .carousel-wrapper {
+        > div {
+          .carousel-img {
+            max-height: 450px;
+          }
+        }
+      }
+    }
+  }
+}

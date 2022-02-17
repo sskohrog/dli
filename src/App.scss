@@ -1,3 +1,5 @@
+@import '/src/_variables.scss';
+
 .danyali-container {
   min-height: 100vh;
   display: flex;
@@ -6,9 +8,9 @@
       margin-bottom: 20px;
       margin-top: 20px;
       .h1-title {
+        font-family: $AG-trial-heavy;
         padding-left: 5rem;
-        letter-spacing: 0.2em;
-        font-weight: bold;
+        letter-spacing: 10px;
         text-decoration: none;
         color: #000;
       }
@@ -34,7 +36,7 @@
       margin-left: 20px;
       padding-top: 24px;
       .h1-title {
-        font-weight: bold;
+        font-family: $AG-trial-heavy;
         transform: rotate(90deg);
         transform-origin: top;
         width: 0;

@@ -1,0 +1,32 @@
+@import '/src/_variables.scss';
+
+.construction-container {
+  margin-top: auto !important;
+  margin-bottom: auto;
+  .title,
+  .subtitle {
+    font-family: $AG-trial-heavy;
+    letter-spacing: 10px;
+    text-align: center;
+  }
+  .title {
+    font-size: 18px;
+    color: #000000;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: #ffea29;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .construction-container {
+    .title {
+      font-size: 40pt;
+    }
+    .subtitle {
+      font-size: 20pt;
+    }
+  }
+}
