@@ -9,11 +9,11 @@ import WorkContainer from '../work/WorkContainer';
 function Routes() {
   return (
     <Router className='row'>
-      <UnderConstruction path='*' />
-      {/* <LandingContainer path='/' />
+      <UnderConstruction path='/' />
+      {/* <LandingContainer path='/' /> */}
       <InfoContainer path='/info' />
       <IndexContainer path='/index' />
-      <WorkContainer path='/work/:id' /> */}
+      <WorkContainer path='/work/:id' />
     </Router>
   );
 }

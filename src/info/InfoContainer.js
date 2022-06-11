@@ -70,14 +70,14 @@ function InfoContainer() {
               </a>
             </div>
             <div className='nav-panel-container'>
-              <a
+              {/* <a
                 className='btn btn-link menu-btn'
                 target='_blank'
                 rel='noreferrer'
                 href='https://wwww.google.com'
               >
                 <b>VISIT PHOTOGRAPHY PAGE</b>
-              </a>
+              </a> */}
               <button
                 className='btn btn-link menu-btn'
                 onClick={() =>
@@ -190,7 +190,7 @@ function PressPanel({ pressData }) {
     <div className='panel-content-container'>
       <b className='mb-3'>PRESS</b>
       {Object.keys(pressData || {}).map((key) => (
-        <a className='panel-links mb-3' href={(pressData[key] || {}).url}>
+        <a className='panel-links mb-3' href={`//${(pressData[key] || {}).url}`} target="_blank" rel="noreferrer">
           <b>{(pressData[key] || {}).title}</b>
         </a>
       ))}
