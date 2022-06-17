@@ -6,7 +6,8 @@ import './Info.scss';
 import { PRESS, PUBLICATIONS, RESUME } from '../global/PANEL_CATEGORIES';
 
 function InfoContainer() {
-  const { aboutData, resumeData, pressData } = useContext(GlobalContext);
+  const { aboutData, resumeData, pressData, selectedClients } =
+    useContext(GlobalContext);
   const [state, setState] = useState({
     panelData: null,
     isPanelOpen: false
@@ -102,6 +103,24 @@ function InfoContainer() {
               >
                 <b>PRESS</b>
               </button>
+              <div
+                className='panel-content-container'
+                style={{ padding: '0.375rem 0.75rem' }}
+              >
+                <b>SELECTED CLIENTS</b>
+                {Object.keys(selectedClients || {})?.map((key) => (
+                  <p style={{ marginBottom: 0 }}>
+                    <a
+                      className='panel-links mb-3'
+                      href={`//${(selectedClients[key] || {}).url}`}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      {(selectedClients[key] || {})?.title}
+                    </a>
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         )}
@@ -148,24 +167,20 @@ function ResumePanel({ resumeData }) {
     <div className='panel-content-container'>
       <b className='mb-3'>EDUCATION</b>
       {((resumeData || {}).education || []).map((edu) => (
-        <b>
-          <i>
-            {(edu || {}).school}
-            <br />
-            {(edu || {}).focus}
-          </i>
+        <b style={{ marginBottom: '1em' }}>
+          <i>{(edu || {}).school} </i>
+          <br />
+          {(edu || {}).focus}
         </b>
       ))}
       <b className='mt-5 mb-3'>PROFESSIONAL EXPERIENCE</b>
       {((resumeData || {}).experience || []).map((exp) => (
-        <b>
-          <i>
-            {(exp || {}).jobtitle}
-            <br />
-            {(exp || {}).client}
-            <br />
-            {(exp || {}).location}
-          </i>
+        <b style={{ marginBottom: '1em' }}>
+          <i>{(exp || {}).jobtitle}</i>
+          <br />
+          {(exp || {}).client}
+          <br />
+          {(exp || {}).location}
         </b>
       ))}
     </div>
@@ -177,9 +192,16 @@ function PublicationPanel({ publicationData }) {
     <div className='panel-content-container'>
       <b className='mb-3'>PUBLICATIONS</b>
       {(publicationData || []).map((pub) => (
-        <b>
-          <i>{pub}</i>
-        </b>
+        <>
+          <b>{pub}</b>
+          {pub === 'Syracuse University School of Architecture' && (
+            <p style={{ marginBottom: 0 }}>
+              <b>
+                <i>Editor</i>
+              </b>
+            </p>
+          )}
+        </>
       ))}
     </div>
   );
@@ -190,7 +212,12 @@ function PressPanel({ pressData }) {
     <div className='panel-content-container'>
       <b className='mb-3'>PRESS</b>
       {Object.keys(pressData || {}).map((key) => (
-        <a className='panel-links mb-3' href={`//${(pressData[key] || {}).url}`} target="_blank" rel="noreferrer">
+        <a
+          className='panel-links mb-3'
+          href={`//${(pressData[key] || {}).url}`}
+          target='_blank'
+          rel='noreferrer'
+        >
           <b>{(pressData[key] || {}).title}</b>
         </a>
       ))}

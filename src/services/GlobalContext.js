@@ -8,7 +8,8 @@ import {
   INDEX_COLLECTION,
   ABOUT_DOC,
   PRESS_DOC,
-  RESUME_DOC
+  RESUME_DOC,
+  SELECTED_CLIENT_DOC
 } from '../global/DATABASE';
 
 const GlobalContext = React.createContext(null);
@@ -18,6 +19,7 @@ function GlobalProvider({ location, children }) {
   const [aboutData, setAboutData] = useState({});
   const [resumeData, setResumeData] = useState({});
   const [pressData, setPressData] = useState({});
+  const [selectedClients, setSelectedClientsData] = useState({});
   const [landingData, setLandingData] = useState({});
   const [indexData, setIndexData] = useState({});
 
@@ -45,6 +47,9 @@ function GlobalProvider({ location, children }) {
           break;
         case RESUME_DOC:
           setResumeData(data);
+          break;
+        case SELECTED_CLIENT_DOC:
+          setSelectedClientsData(data);
           break;
         default:
           break;
@@ -101,6 +106,7 @@ function GlobalProvider({ location, children }) {
         aboutData,
         resumeData,
         pressData,
+        selectedClients,
         landingData,
         workItems,
         db

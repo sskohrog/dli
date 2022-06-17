@@ -3,6 +3,13 @@
   src: url('./assets/ABCMonumentGrotesk-Heavy-Trial.otf') format('opentype');
 }
 
-$AG-trial-heavy: ABCMonumentGrotesk-Heavy-Trial;
+@font-face {
+  font-family: 'ABCMonumentGrotesk-Bold-Trial';
+  src: url('./assets/ABCMonumentGrotesk-Bold-Trial.otf')
+    format('opentype');
+}
+
+$AG-heavy: ABCMonumentGrotesk-Heavy-Trial;
+$AG-bold: ABCMonumentGrotesk-Bold-Trial;
 
 $light-grey: #7d7d7d;
