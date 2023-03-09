@@ -38,14 +38,40 @@ function WorkContainer({ id }) {
           >
             {((work || {}).carousel || []).map((img) => {
               return (
-                <img
-                  alt='carousel item'
-                  className='carousel-img'
-                  src={img}
-                />
+                <img alt='carousel item' className='carousel-img' src={img} />
               );
             })}
           </ItemsCarousel>
+        </div>
+        <div
+          className='col-12'
+          style={{
+            display: 'flex',
+            flexFlow: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <u
+            style={{
+              fontSize: '14px',
+              fontWeight: 700,
+              textAlign: 'center',
+              paddingTop: '38px',
+              paddingBottom: '12px'
+            }}
+          >
+            {work?.workName}
+          </u>
+          <div
+            style={{
+              fontSize: '12px',
+              textAlign: 'center',
+              width: '500px'
+            }}
+            dangerouslySetInnerHTML={{
+              __html: work?.info
+            }}
+          />
         </div>
       </div>
     </div>
