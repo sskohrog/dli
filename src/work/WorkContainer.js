@@ -41,7 +41,7 @@ function WorkContainer({ id }) {
                 <img
                   alt='carousel item'
                   className='carousel-img'
-                  src={img.url}
+                  src={img}
                 />
               );
             })}
